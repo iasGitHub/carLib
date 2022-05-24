@@ -39,10 +39,21 @@ public class CarlibApplication implements CommandLineRunner {
 		Optional<Category> optCategory = categoryService.getCategoryById(1);
 		Category categoryId1 = optCategory.get();
 		
+		Optional<Product> optProduct = productService.getProductById(1);
+		Product productId1 = optProduct.get();
+		
 		System.out.println(categoryId1.getName());	
- 
+		
 		categoryId1.getProducts().forEach(
 				product -> System.out.println(product.getName()));
+		
+		System.out.println(" -------------------------------------------------- ");
+		
+		System.out.println(productId1.getName());
+		
+		productId1.getCategories().forEach(
+				category -> System.out.println(category.getName()));
+		
 		
 //		System.out.println(" --------------------------------------------------- ");
 //		
